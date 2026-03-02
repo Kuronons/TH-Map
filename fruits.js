@@ -13,15 +13,3 @@ const fruitLocations = [
   }
 ];
 
-const fruits = [
-  {
-    name: "Azureberry",
-    seasons: ["all"],
-    coords: [x: 2781, y: 2501]
-  },
-  {
-    name: "Bloodberry",
-    seasons: ["spring"],
-    coords: [1880, 1420]
-  }
-];
