@@ -21,16 +21,6 @@ body {
   z-index: 1;
 }
 
-.fruitMarker {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
 .leaflet-container {
   cursor: crosshair !important;
 }
