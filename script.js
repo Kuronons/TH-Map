@@ -19,25 +19,26 @@ const layers = {
 
 map.on('click', function (e) {
 
+  if (!e.latlng) return;
+
   const x = Math.round(e.latlng.lng);
   const y = Math.round(e.latlng.lat);
 
   const coords = `x: ${x}, y: ${y}`;
 
   console.log(coords);
-
-  // Copy to clipboard
   navigator.clipboard.writeText(coords);
 
-  // Temporary marker
   if (window.clickMarker) {
     map.removeLayer(window.clickMarker);
   }
 
-  window.clickMarker = L.marker([y, x])
-    .addTo(map)
-    .bindPopup(`Copied:<br>${coords}`)
-    .openPopup();
+  window.clickMarker = L.circleMarker([y, x], {
+    radius: 6
+  })
+  .addTo(map)
+  .bindPopup(coords)
+  .openPopup();
 
 });
 
