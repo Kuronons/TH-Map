@@ -116,35 +116,27 @@ document.querySelectorAll("[data-layer]").forEach(toggle => {
 
 });
 
-document.querySelectorAll("#sidebar input[type=checkbox]")
-  .forEach(box => {
-    box.addEventListener("change", function() {
-      const category = this.dataset.category;
-      if (this.checked) {
-        map.addLayer(layers[category]);
+document.addEventListener("DOMContentLoaded", () => {
+
+  const legendToggles =
+    document.querySelectorAll("#mapLegend input");
+
+  legendToggles.forEach(toggle => {
+
+    toggle.addEventListener("change", e => {
+
+      const layerName = e.target.dataset.layer;
+      const layer = layers[layerName];
+
+      if (!layer) return;
+
+      if (e.target.checked) {
+        map.addLayer(layer);
       } else {
-        map.removeLayer(layers[category]);
+        map.removeLayer(layer);
       }
+
     });
-  });
-
-const legendToggles =
-  document.querySelectorAll("#mapLegend input");
-
-legendToggles.forEach(toggle => {
-
-  toggle.addEventListener("change", e => {
-
-    const layerName = e.target.dataset.layer;
-    const layer = layers[layerName];
-
-    if (!layer) return;
-
-    if (e.target.checked) {
-      map.addLayer(layer);
-    } else {
-      map.removeLayer(layer);
-    }
 
   });
 
