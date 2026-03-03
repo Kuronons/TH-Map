@@ -128,3 +128,24 @@ document.querySelectorAll("#sidebar input[type=checkbox]")
     });
   });
 
+const legendToggles =
+  document.querySelectorAll("#mapLegend input");
+
+legendToggles.forEach(toggle => {
+
+  toggle.addEventListener("change", e => {
+
+    const layerName = e.target.dataset.layer;
+    const layer = layers[layerName];
+
+    if (!layer) return;
+
+    if (e.target.checked) {
+      map.addLayer(layer);
+    } else {
+      map.removeLayer(layer);
+    }
+
+  });
+
+});
