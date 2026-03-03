@@ -94,6 +94,11 @@ map.on('click', function (e) {
 
 });
 
+function getActiveFruits(location) {
+  const allFruit = location.fruits.all || [];
+  const seasonal = location.fruits[currentSeason] || [];
+  return [...allFruit, ...seasonal];
+}
 
 fruitLocations.forEach(location => {
 
