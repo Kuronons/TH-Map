@@ -98,20 +98,6 @@ map.on('click', function (e) {
 
 });
 
-function getActiveFruits(location) {
-  const allFruit = location.fruits.all || [];
-  const seasonal = location.fruits[currentSeason] || [];
-  return [...allFruit, ...seasonal];
-}
-
-
-function getActiveFruits(location) {
-
-  const allFruit = location.fruits.all || [];
-  const seasonal = location.fruits[currentSeason] || [];
-
-  return [...allFruit, ...seasonal];
-}
 
 document.querySelectorAll("[data-layer]").forEach(toggle => {
 
