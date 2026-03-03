@@ -1,25 +1,16 @@
-// --- MAP SETUP ---
-const map = L.map("map", {
+const map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -2
 });
 
-// IMPORTANT: matches your 4096 image
 const bounds = [[0,0],[4096,4096]];
 
-// THIS IS THE LINE THAT SHOWS YOUR MAP
-L.imageOverlay("worldmap.png", bounds).addTo(map);
+L.imageOverlay('worldmap.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
 
-// --- LAYERS ---
-const layers = {
-  fruits: L.layerGroup().addTo(map)
-};
-
-
-// --- FRUIT COLOURS ---
+// --- Fruit colour dots ---
 const fruitColors = {
   "Azureberry": "#4cc9f0",
   "Sunapple": "#ffd166",
@@ -31,37 +22,33 @@ const fruitColors = {
 };
 
 
-// --- CREATE MARKERS ---
+// --- Render fruits ---
 fruitLocations.forEach(location => {
 
-  Object.values(location.fruits).flat().forEach(fruit => {
+  Object.values(location.fruits)
+    .flat()
+    .forEach(fruit => {
 
-    if (!fruitColors[fruit]) return;
+      if (!fruitColors[fruit]) return;
 
-    L.circleMarker(location.coords, {
-      radius: 6,
-      fillColor: fruitColors[fruit],
-      color: "#222",
-      weight: 1,
-      fillOpacity: 0.9
-    })
-    .bindPopup(`<b>${fruit}</b>`)
-    .addTo(layers.fruits);
+      L.circleMarker(location.coords, {
+        radius: 6,
+        fillColor: fruitColors[fruit],
+        color: "#222",
+        weight: 1,
+        fillOpacity: 0.9
+      })
+      .bindPopup(fruit)
+      .addTo(map);
 
-  });
+    });
 
 });
 
 
-// --- LEGEND TOGGLE ---
-document
-  .getElementById("toggle-fruits")
-  .addEventListener("change", e => {
-
-    if (e.target.checked) {
-      map.addLayer(layers.fruits);
-    } else {
-      map.removeLayer(layers.fruits);
-    }
-
+// --- Coordinate capture ---
+map.on("click", function(e) {
+  console.log(
+    `coords: [${e.latlng.lat.toFixed(0)}, ${e.latlng.lng.toFixed(0)}]`
+  );
 });
