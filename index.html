@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Teddy's Haven Map</title>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Teddy's Haven Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="container">
   <div id="sidebar">
-    <h2>Legend</h2>
-    <label>
-      <input type="checkbox" id="toggle-fruits" checked>
-      Fruits
-    </label>
+    <h2>Teddy's Haven</h2>
+
+    <div class="sidebar-section">
+      <h3>Layers</h3>
+      <label><input type="checkbox" id="toggle-fruits" checked> 🍓 Fruits</label>
+      <label><input type="checkbox" id="toggle-stone" checked> 🪨 Stone</label>
+      <label><input type="checkbox" id="toggle-ore" checked> ⛏️ Ore</label>
+      <label><input type="checkbox" id="toggle-creatures" checked> 🐾 Creatures</label>
+      <label><input type="checkbox" id="toggle-magical-visitors" checked> ✨ Magical Visitors</label>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Fruit Season</h3>
+      <div id="season-filters">
+        <button class="season-btn active" data-season="all">All Year</button>
+        <button class="season-btn" data-season="spring">Spring</button>
+        <button class="season-btn" data-season="summer">Summer</button>
+        <button class="season-btn" data-season="fall">Fall</button>
+        <button class="season-btn" data-season="winter">Winter</button>
+      </div>
+    </div>
   </div>
+
   <div id="map-wrapper">
     <div id="map"></div>
-    <div id="coord-display">Click map for coords</div>
+    <div id="coord-display">Click map to copy coords</div>
   </div>
 </div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="fruits.js"></script>
+<script src="stone.js"></script>
+<script src="ore.js"></script>
+<script src="creatures.js"></script>
+<script src="magical_visitors.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
