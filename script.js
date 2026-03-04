@@ -3,19 +3,14 @@ const map = L.map("map", {
   crs: L.CRS.Simple,
   minZoom: -2
 });
-
 const bounds = [[0,0],[4096,4096]];
-
 L.imageOverlay("worldmap.png", bounds).addTo(map);
-
 map.fitBounds(bounds);
-
 
 // ---------------- LAYERS ----------------
 const layers = {
   fruits: L.layerGroup().addTo(map)
 };
-
 
 // ---------------- FRUIT COLOURS ----------------
 const fruitColors = {
@@ -28,16 +23,12 @@ const fruitColors = {
   "Skydrop": "#4895ef"
 };
 
-
 // ---------------- DRAW FRUITS ----------------
 fruitLocations.forEach(location => {
-
   Object.values(location.fruits)
     .flat()
     .forEach(fruit => {
-
       if (!fruitColors[fruit]) return;
-
       L.circleMarker(location.coords, {
         radius: 6,
         fillColor: fruitColors[fruit],
@@ -47,28 +38,36 @@ fruitLocations.forEach(location => {
       })
       .bindPopup(`<b>${fruit}</b>`)
       .addTo(layers.fruits);
-
     });
-
 });
-
 
 // ---------------- LEGEND TOGGLE ----------------
 document
   .getElementById("toggle-fruits")
   .addEventListener("change", function () {
-
     if (this.checked) {
       map.addLayer(layers.fruits);
     } else {
       map.removeLayer(layers.fruits);
     }
-});
+  });
 
+// ---------------- COORD CAPTURE ----------------
+const coordBox = document.getElementById("coord-display");
 
-// ---------------- CLICK COORD CAPTURE ----------------
 map.on("click", e => {
-  console.log(
-    `[${Math.round(e.latlng.lat)}, ${Math.round(e.latlng.lng)}]`
-  );
+  const lat = Math.round(e.latlng.lat);
+  const lng = Math.round(e.latlng.lng);
+  const coordText = `[${lat}, ${lng}]`;
+
+  // Update the display box
+  coordBox.textContent = coordText;
+  coordBox.classList.add("flash");
+  setTimeout(() => coordBox.classList.remove("flash"), 400);
+
+  // Also copy to clipboard for convenience
+  navigator.clipboard?.writeText(coordText).catch(() => {});
+
+  // Log to console as backup
+  console.log(coordText);
 });
