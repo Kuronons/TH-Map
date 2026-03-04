@@ -1,3 +1,3 @@
 const magicalVisitorLocations = [
-  // { id: 1, coords: [2349, 1144] }
+  { id: 1, coords: [2349, 1144] }
 ];
