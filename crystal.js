@@ -23,11 +23,11 @@ const crystalLocations = [
   { id: 8, coords: [1267, 2746], crystals: ["Dragon's Blood"] },
   { id: 9, coords: [1214, 2784], crystals: ["Dragon's Blood"] },
 
-  { id: 10, coords: [2539, 3267], crystals: ["Ferbrite"] },
-  { id: 11, coords: [2561, 3359], crystals: ["Ferbrite"] },
-  { id: 12, coords: [3167, 2024], crystals: ["Ferbrite"] },
-  { id: 13, coords: [2970, 392], crystals: ["Ferbrite"] },
-  { id: 14, coords: [3034, 332], crystals: ["Ferbrite"] },
-  { id: 15, coords: [3171, 565], crystals: ["Ferbrite"] },
-  { id: 16, coords: [3171, 616], crystals: ["Ferbrite"] },
+  { id: 10, coords: [2539, 3267], crystals: ["Fernbrite"] },
+  { id: 11, coords: [2561, 3359], crystals: ["Fernbrite"] },
+  { id: 12, coords: [3167, 2024], crystals: ["Fernbrite"] },
+  { id: 13, coords: [2970, 392], crystals: ["Fernbrite"] },
+  { id: 14, coords: [3034, 332], crystals: ["Fernbrite"] },
+  { id: 15, coords: [3171, 565], crystals: ["Fernbrite"] },
+  { id: 16, coords: [3171, 616], crystals: ["Fernbrite"] },
 ];
