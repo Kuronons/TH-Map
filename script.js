@@ -187,47 +187,17 @@ document.querySelectorAll(".fruit-filter-btn").forEach(btn => {
   });
 });
 
-// ---------------- COORD CAPTURE ----------------
-const coordBox = document.getElementById("coord-display");
+// ---------------- COORD CAPTURE REMOVED ----------------
 
-function copyToClipboard(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => showCopied()).catch(() => fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-}
-
-function fallbackCopy(text) {
-  const el = document.createElement("textarea");
-  el.value = text;
-  el.style.position = "fixed";
-  el.style.opacity = "0";
-  document.body.appendChild(el);
-  el.focus();
-  el.select();
-  try { document.execCommand("copy"); showCopied(); } catch (err) { console.warn("Copy failed:", err); }
-  document.body.removeChild(el);
-}
-
-function showCopied() {
-  coordBox.dataset.prev = coordBox.textContent;
-  coordBox.textContent = "✓ Copied!";
-  coordBox.classList.add("copied");
-  setTimeout(() => {
-    coordBox.textContent = coordBox.dataset.prev;
-    coordBox.classList.remove("copied");
-  }, 1200);
-}
-
-map.on("click", e => {
-  const lat = Math.round(e.latlng.lat);
-  const lng = Math.round(e.latlng.lng);
-  const coordText = `[${lat}, ${lng}]`;
-  coordBox.textContent = coordText;
-  copyToClipboard(coordText);
-  console.log(coordText);
-});
+// ---------------- HOME MARKER ----------------
+L.marker([2912, 2288], {
+  icon: L.divIcon({
+    html: '🏠',
+    className: 'home-icon',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12]
+  })
+}).bindPopup("<b>Your Shop</b>").addTo(map);
 
 // ---------------- SEARCH ----------------
 let searchHighlightLayers = [];
