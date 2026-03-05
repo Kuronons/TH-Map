@@ -81,5 +81,5 @@ const creatureTypes = {
 };
 
 const creatureLocations = [
-  // { id: 1, coords: [x, y], radius: 150, creatures: ["Kokoraptor"] }
+  { id: 1, coords: [3463, 2326], radius: 150, creatures: ["Kokoraptor"] }
 ];
