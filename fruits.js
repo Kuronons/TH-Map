@@ -56,7 +56,26 @@ const fruitLocations = [
   { id: 38,  coords: [1936, 2032], type: "seasonal", fruits: { spring: "Azureberry", summer: "Nightblush Berry", fall: "Mireberry", winter: "Twilipuff" } },
   { id: 39,  coords: [1897, 2048], type: "seasonal", fruits: { spring: "Azureberry", summer: "Nightblush Berry", fall: "Mireberry", winter: "Twilipuff" } },
   { id: 40,  coords: [1849, 2041], type: "seasonal", fruits: { spring: "Azureberry", summer: "Nightblush Berry", fall: "Mireberry", winter: "Twilipuff" } },
-  { id: 41,  coords: [1821, 2917], type: "seasonal", fruits: { spring: "Azureberry", summer: "Nightblush Berry", fall: "Mireberry", winter: "Twilipuff" } }
+  { id: 41,  coords: [1821, 2917], type: "seasonal", fruits: { spring: "Azureberry", summer: "Nightblush Berry", fall: "Mireberry", winter: "Twilipuff" } },
+
+  { id: 42,  coords: [3064, 2584], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 43,  coords: [3043, 2644], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 44,  coords: [3145, 2632], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 45,  coords: [3102, 2696], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 46,  coords: [3130, 2787], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 47,  coords: [3103, 2824], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 48,  coords: [3000, 2915], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 49,  coords: [2814, 2868], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 50,  coords: [2843, 2692], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 51,  coords: [2297, 1615], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 52,  coords: [2225, 1432], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 53,  coords: [2181, 1510], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 54,  coords: [2215, 1696], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 55,  coords: [2179, 1740], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 56,  coords: [2069, 1753], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 57,  coords: [2138, 1595], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+  { id: 58,  coords: [2184, 1842], type: "seasonal", fruits: { spring: "Skydrop Berry", summer: "Tigermelon", fall: "Mellowspike", winter: "Faepeach" } },
+
 
 
 ];
