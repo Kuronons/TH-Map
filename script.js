@@ -99,80 +99,75 @@ function drawFruits() {
 drawFruits();
 
 // ---------------- DRAW STONE ----------------
-stoneLocations.forEach(location => {
-  L.circleMarker(location.coords, {
-    radius: 6, fillColor: "#a89070", color: "#222", weight: 1, fillOpacity: 0.9
-  })
-  .bindPopup("<b>Stone</b>")
-  .addTo(layers.stone);
-});
+function drawStone() {
+  layers.stone.clearLayers();
+  stoneLocations.forEach(location => {
+    L.circleMarker(location.coords, {
+      radius: 6, fillColor: "#a89070", color: "#222", weight: 1, fillOpacity: 0.9
+    }).bindPopup("<b>Stone</b>").addTo(layers.stone);
+  });
+}
+drawStone();
 
 // ---------------- DRAW CRYSTAL ----------------
-crystalLocations.forEach(location => {
-  (location.crystals || []).forEach(name => {
-    const type = crystalTypes[name] || { color: "#a78bfa", info: null };
-    const popup = type.info
-      ? `<b>${name}</b><br><i>⚠️ ${type.info}</i>`
-      : `<b>${name}</b>`;
-    L.circleMarker(location.coords, {
-      radius: 6, fillColor: type.color, color: "#222", weight: 1, fillOpacity: 0.9
-    })
-    .bindPopup(popup)
-    .addTo(layers.crystal);
+function drawCrystal() {
+  layers.crystal.clearLayers();
+  crystalLocations.forEach(location => {
+    (location.crystals || []).forEach(name => {
+      const type = crystalTypes[name] || { color: "#a78bfa", info: null };
+      const popup = type.info
+        ? `<b>${name}</b><br><i>⚠️ ${type.info}</i>`
+        : `<b>${name}</b>`;
+      L.circleMarker(location.coords, {
+        radius: 6, fillColor: type.color, color: "#222", weight: 1, fillOpacity: 0.9
+      }).bindPopup(popup).addTo(layers.crystal);
+    });
   });
-});
+}
+drawCrystal();
 
 // ---------------- DRAW CREATURES ----------------
 const CREATURE_RADIUS = 150;
 
-creatureLocations.forEach(location => {
-  // Draw spawn radius circle
-  L.circle(location.coords, {
-    radius: location.radius || CREATURE_RADIUS,
-    color: "#e05252",
-    weight: 1.5,
-    opacity: 0.6,
-    fillColor: "#e05252",
-    fillOpacity: 0.08
-  }).addTo(layers.creatures);
+function drawCreatures() {
+  layers.creatures.clearLayers();
+  creatureLocations.forEach(location => {
+    L.circle(location.coords, {
+      radius: location.radius || CREATURE_RADIUS,
+      color: "#e05252",
+      weight: 1.5,
+      opacity: 0.6,
+      fillColor: "#e05252",
+      fillOpacity: 0.08
+    }).addTo(layers.creatures);
 
-  // Draw marker and popup for each creature at this location
-  (location.creatures || []).forEach(name => {
-    const type = creatureTypes[name] || { color: "#e05252", resource: name, icon: null, crafting: "" };
-
-    const iconHtml = type.icon
-      ? `<img src="${type.icon}" style="width:40px;height:40px;object-fit:contain;display:block;margin:0 auto 6px auto;">`
-      : "";
-    const resourceHtml = type.resource
-      ? `<span style="font-size:12px;color:#444;">${type.resource}</span>`
-      : "";
-    const infoHtml = type.info
-      ? `<div style="margin-top:4px;font-size:12px;color:#888;font-style:italic;">${type.info}</div>`
-      : "";
-    const craftingHtml = type.crafting
-      ? `<div style="margin-top:6px;font-size:11px;color:#666;"><b>Used in:</b> ${type.crafting}</div>`
-      : "";
-
-    const popupHtml = `
-      <div style="text-align:center;min-width:120px;">
-        ${iconHtml}
-        <b style="font-size:13px;">${name}</b><br>
-        ${resourceHtml}
-        ${infoHtml}
-        ${craftingHtml}
-      </div>`;
-
-    L.circleMarker(location.coords, {
-      radius: 6,
-      fillColor: type.color,
-      color: "#222",
-      weight: 1,
-      fillOpacity: 0.9
-    })
-    .bindPopup(popupHtml)
-    .addTo(layers.creatures);
+    (location.creatures || []).forEach(name => {
+      const type = creatureTypes[name] || { color: "#e05252", resource: name, icon: null, crafting: "" };
+      const iconHtml = type.icon
+        ? `<img src="${type.icon}" style="width:40px;height:40px;object-fit:contain;display:block;margin:0 auto 6px auto;">`
+        : "";
+      const resourceHtml = type.resource
+        ? `<span style="font-size:12px;color:#444;">${type.resource}</span>`
+        : "";
+      const infoHtml = type.info
+        ? `<div style="margin-top:4px;font-size:12px;color:#888;font-style:italic;">${type.info}</div>`
+        : "";
+      const craftingHtml = type.crafting
+        ? `<div style="margin-top:6px;font-size:11px;color:#666;"><b>Used in:</b> ${type.crafting}</div>`
+        : "";
+      const popupHtml = `
+        <div style="text-align:center;min-width:120px;">
+          ${iconHtml}
+          <b style="font-size:13px;">${name}</b><br>
+          ${resourceHtml}${infoHtml}${craftingHtml}
+        </div>`;
+      L.circleMarker(location.coords, {
+        radius: 6, fillColor: type.color, color: "#222", weight: 1, fillOpacity: 0.9
+      }).bindPopup(popupHtml).addTo(layers.creatures);
+    });
   });
-});
+}
+drawCreatures();
 
 // ---------------- LAYER TOGGLES ----------------
 const toggleMap = {
@@ -181,15 +176,21 @@ const toggleMap = {
   "toggle-crystal":    layers.crystal,
   "toggle-creatures":  layers.creatures
 };
+const redrawFns = {
+  "toggle-fruits":    drawFruits,
+  "toggle-stone":     drawStone,
+  "toggle-crystal":   drawCrystal,
+  "toggle-creatures": drawCreatures
+};
+
 Object.entries(toggleMap).forEach(([id, layer]) => {
   const el = document.getElementById(id);
   if (!el) return;
   el.addEventListener("change", function () {
-    // Clear any active search state first
     clearSearchHighlights();
     if (this.checked) {
+      if (redrawFns[id]) redrawFns[id]();
       map.addLayer(layer);
-      if (id === "toggle-fruits") drawFruits();
     } else {
       map.removeLayer(layer);
     }
@@ -425,10 +426,11 @@ function highlightAllCoords(allCoords, category, label) {
 function restoreAllLayers() {
   Object.entries(toggleMap).forEach(([id, layer]) => {
     const checkbox = document.getElementById(id);
-    if (checkbox && checkbox.checked) map.addLayer(layer);
+    if (checkbox && checkbox.checked) {
+      if (redrawFns[id]) redrawFns[id]();
+      map.addLayer(layer);
+    }
   });
-  // Redraw fruits with active season/filter
-  drawFruits();
 }
 
 const searchInput = document.getElementById("search-input");
