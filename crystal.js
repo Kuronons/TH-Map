@@ -11,5 +11,6 @@ const crystalTypes = {
 };
 
 const crystalLocations = [
-  { id: 1, coords: [1870, 1828], crystals: ["Lavendrite"] }
+  { id: 1, coords: [1870, 1828], crystals: ["Lavendrite"] },
+  { id: 2, coords: [2203, 3498], crystals: ["Lavendrite"] }
 ];
