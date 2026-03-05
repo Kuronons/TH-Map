@@ -16,7 +16,6 @@
       <label><input type="checkbox" id="toggle-fruits" checked> 🍓 Fruits</label>
       <label><input type="checkbox" id="toggle-stone" checked> 🪨 Stone</label>
       <label><input type="checkbox" id="toggle-crystal" checked> 💎 Crystal</label>
-      <label><input type="checkbox" id="toggle-ore" checked> ⛏️ Ore</label>
       <label><input type="checkbox" id="toggle-creatures" checked> 🐾 Creatures</label>
       <label><input type="checkbox" id="toggle-magical-visitors" checked> ✨ Magical Visitors</label>
     </div>
@@ -24,11 +23,67 @@
     <div class="sidebar-section">
       <h3>Fruit Season</h3>
       <div id="season-filters">
-        <button class="season-btn active" data-season="all">All Year</button>
-        <button class="season-btn" data-season="spring">Spring</button>
-        <button class="season-btn" data-season="summer">Summer</button>
-        <button class="season-btn" data-season="fall">Fall</button>
-        <button class="season-btn" data-season="winter">Winter</button>
+
+        <div class="season-row">
+          <button class="season-btn active" data-season="all">All Year</button>
+        </div>
+
+        <div class="season-row">
+          <button class="season-btn" data-season="spring">Spring</button>
+          <div class="fruit-dropdown" id="dropdown-spring">
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="">All</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Ghost Berry">Ghost Berry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Azureberry">Azureberry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Skydrop Berry">Skydrop Berry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Nightshade Berry">Nightshade Berry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Emberberry">Emberberry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Bloodberry">Bloodberry</button>
+            <button class="fruit-filter-btn" data-season="spring" data-fruit="Greenwhistle Apple">Greenwhistle Apple</button>
+          </div>
+        </div>
+
+        <div class="season-row">
+          <button class="season-btn" data-season="summer">Summer</button>
+          <div class="fruit-dropdown" id="dropdown-summer">
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="">All</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Solberry">Solberry</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Nightblush Berry">Nightblush Berry</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Tigermelon">Tigermelon</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Velvenight Berry">Velvenight Berry</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Heartgleam">Heartgleam</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Honeycran Berry">Honeycran Berry</button>
+            <button class="fruit-filter-btn" data-season="summer" data-fruit="Sunapple">Sunapple</button>
+          </div>
+        </div>
+
+        <div class="season-row">
+          <button class="season-btn" data-season="fall">Fall</button>
+          <div class="fruit-dropdown" id="dropdown-fall">
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="">All</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Mirthshade">Mirthshade</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Mireberry">Mireberry</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Mellowspike">Mellowspike</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Scarletip">Scarletip</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Seafallow Berry">Seafallow Berry</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Amberburst">Amberburst</button>
+            <button class="fruit-filter-btn" data-season="fall" data-fruit="Amberfall Apple">Amberfall Apple</button>
+          </div>
+        </div>
+
+        <div class="season-row">
+          <button class="season-btn" data-season="winter">Winter</button>
+          <div class="fruit-dropdown" id="dropdown-winter">
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="">All</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Velvitfrost Berry">Velvitfrost Berry</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Twilipuff">Twilipuff</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Faepeach">Faepeach</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Frostgleam">Frostgleam</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Icerose Berry">Icerose Berry</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Lunabright">Lunabright</button>
+            <button class="fruit-filter-btn" data-season="winter" data-fruit="Frostveil Apple">Frostveil Apple</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
