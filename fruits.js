@@ -20,6 +20,12 @@ const fruitLocations = [
   { id: 5, coords: [2626, 2456], type: "persistent", fruit: "Ghost Berry" },
   { id: 6, coords: [2697, 2376], type: "persistent", fruit: "Ghost Berry" },
   { id: 7, coords: [2585, 2356], type: "persistent", fruit: "Ghost Berry" },
+  { id: 118, coords: [1577, 2020], type: "persistent", fruit: "Royal Peach" },
+  { id: 119, coords: [1255, 1849], type: "persistent", fruit: "Royal Peach" },
+  { id: 120, coords: [1118, 1817], type: "persistent", fruit: "Royal Peach" },
+  { id: 121, coords: [771, 1585], type: "persistent", fruit: "Royal Peach" },
+  { id: 122, coords: [624, 1593], type: "persistent", fruit: "Royal Peach" },
+  { id: 123, coords: [1925, 1839], type: "persistent", fruit: "Royal Peach" },
 
   // SEASONAL:
   { id: 8,  coords: [2942, 2344], type: "seasonal", fruits: { spring: "Ghost Berry", summer: "Solberry", fall: "Mirthshade", winter: "Velvitfrost Berry" } },
