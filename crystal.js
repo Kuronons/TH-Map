@@ -18,6 +18,7 @@ const crystalLocations = [
   { id: 4, coords: [2477, 819], crystals: ["Blue Sky"] },
   { id: 5, coords: [2341, 823], crystals: ["Blue Sky"] },
   { id: 6, coords: [2598, 3720], crystals: ["Blue Sky"] },
+  { id: 28, coords: [2152, 868], crystals: ["Blue Sky"] },
 
   { id: 7, coords: [1255, 2695], crystals: ["Dragon's Blood"] },
   { id: 8, coords: [1267, 2746], crystals: ["Dragon's Blood"] },
