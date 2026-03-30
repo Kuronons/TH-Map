@@ -296,3 +296,27 @@ html, body {
   border: none;
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
+
+/* ---------- COORD DISPLAY ---------- */
+#coord-display {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  background: rgba(20, 18, 14, 0.82);
+  color: #f0ead6;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  pointer-events: none;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+  transition: background 0.15s, color 0.15s;
+}
+
+#coord-display.copied {
+  background: rgba(52, 130, 80, 0.88);
+  color: #ffffff;
+}
