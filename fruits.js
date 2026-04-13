@@ -29,6 +29,7 @@ const fruitLocations = [
   { id: 124, coords: [1046, 1920], type: "persistent", fruit: "Royal Peach" },
   { id: 125, coords: [1266, 2222], type: "persistent", fruit: "Royal Peach" },
   { id: 126, coords: [500, 1800], type: "persistent", fruit: "Royal Peach" },
+  { id: 127, coords: [2244, 3737], type: "persistent", fruit: "Royal Peach" },
 
   // SEASONAL:
   { id: 8,  coords: [2942, 2344], type: "seasonal", fruits: { spring: "Ghost Berry", summer: "Solberry", fall: "Mirthshade", winter: "Velvitfrost Berry" } },
