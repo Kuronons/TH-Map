@@ -14,6 +14,7 @@ const crystalLocations = [
   { id: 1, coords: [1870, 1828], crystals: ["Lavendrite"] },
   { id: 2, coords: [2203, 3498], crystals: ["Lavendrite"] },
   { id: 3, coords: [2284, 3646], crystals: ["Lavendrite"] },
+  { id: 30, coords: [1850, 1840], crystals: ["Lavendrite"] },
 
   { id: 4, coords: [2477, 819], crystals: ["Blue Sky"] },
   { id: 5, coords: [2341, 823], crystals: ["Blue Sky"] },
@@ -41,6 +42,8 @@ const crystalLocations = [
   { id: 22, coords: [3655, 1745], crystals: ["Honeyglow"] },
   { id: 23, coords: [3667, 1790], crystals: ["Honeyglow"] },
   { id: 24, coords: [3584, 1798], crystals: ["Honeyglow"] },
+  { id: 31, coords: [3580, 1768], crystals: ["Honeyglow"] },
+  { id: 32, coords: [3620, 1820], crystals: ["Honeyglow"] },
 
   { id: 25, coords: [2934, 2495], crystals: ["Lunacite"] },
 
